@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+body {
+    position: absolute;
+    background-color: #f0f0f0;
+
+    width: 100%;
+    height: 100%;
+}
+
+#header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "VT323", monospace;
+
+    width: 100%;
+    padding: 10px 0;
+    font-size: 2.5em;
+}
+
+#header > img {
+    height: 0.8em;
+    margin: 0 10px;
+}
+
+#header .version {
+    font-size: 0.6em;
+}
+
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+}
+
+#game-canvas {
+    border: 2px solid #0007;
+
+    width: 70vw;
+    height: 80vh;
+}
+
+#game-canvas:hover {
+    border-color: #fff7;
+}
+
+#game .control {
+    width: 20vw;
+    height: 80vh;
+}
+
+@media screen and (max-width: 700px) {
+    #game {
+        flex-direction: column;
+    }
+
+    #game-canvas {
+        width: 95vw;
+    }
+}
