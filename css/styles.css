@@ -15,6 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    user-select: none;
     font-family: "VT323", monospace;
 
     width: 100%;
