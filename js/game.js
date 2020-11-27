@@ -63,7 +63,7 @@ var Game = function()
     
     this.width = this.canvas.width;
     this.height = this.canvas.height;
-    this.fontSize = this.height / 25;
+    this.fontSize = this.width / 35;
     this.fps = 0;
     this.score = 0;
     this.isPause = true;

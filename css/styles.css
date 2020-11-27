@@ -1,8 +1,9 @@
+@import url("https://pm25.github.io/css/master.css");
 @import url("https://fonts.googleapis.com/css?family=VT323");
 
 body {
     position: absolute;
-    background-color: #f0f0f0;
+    background-color: #556052;
 
     width: 100%;
     height: 100%;
@@ -19,6 +20,7 @@ body {
     width: 100%;
     padding: 10px 0;
     font-size: 2.5em;
+    color: wheat;
 }
 
 #header > img {
@@ -41,25 +43,11 @@ body {
 #game-canvas {
     border: 2px solid #0007;
 
-    width: 70vw;
+    width: 80vw;
     height: 80vh;
+    border-radius: 0.8em;
 }
 
 #game-canvas:hover {
     border-color: #fff7;
-}
-
-#game .control {
-    width: 20vw;
-    height: 80vh;
-}
-
-@media screen and (max-width: 700px) {
-    #game {
-        flex-direction: column;
-    }
-
-    #game-canvas {
-        width: 95vw;
-    }
 }

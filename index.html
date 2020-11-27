@@ -12,11 +12,16 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
+        <script src="https://pm25.github.io/js/require.js" data-main="https://pm25.github.io/js/master.js" defer></script>
         <script defer src="js/game.js"></script>
         <title>Flappy Bird</title>
     </head>
 
     <body>
+        <!-- PlusMore's navigation bar, doesn't work outside pm25.github.io -->
+        <div data-include="home-nav"></div>
+        <div data-include="side-nav"></div>
+
         <div id="header">
             <img src="img/bird.png" />
             <div>
@@ -29,8 +34,6 @@
             <canvas id="game-canvas">
                 Your browser does not support the canvas element.
             </canvas>
-
-            <div class="control"></div>
         </div>
     </body>
 </html>
