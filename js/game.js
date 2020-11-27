@@ -56,6 +56,7 @@ var Game = function()
 {
     this.canvas = document.querySelector("#game-canvas");
     this.ctx = setupCanvas(this.canvas);
+    this.description_box = document.querySelector(".description-box");
 
     this.now;
     this.past = Date.now();
@@ -105,7 +106,12 @@ var Game = function()
     document.getElementById("game-canvas").addEventListener("click", function() {
         if(game.isLose) game.restart();
         else if(game.isPause) game.pause();
-        else game.birds[0].jump();
+        game.birds[0].jump();
+    }, false);
+
+    this.description_box.addEventListener("click", function() {
+        if(game.isLose) game.restart();
+        else if(game.isPause) game.pause();
     }, false);
 }
 
@@ -205,22 +211,6 @@ Game.prototype.render = function()
     if(this.isShowInfo) {
         this.ctx.fillText("FPS: " + this.fps, 5, this.fontSize * 2);
     }
-    // Lose message
-    if(this.isLose) {
-        this.ctx.fillStyle = "#aa1155";
-        this.ctx.font = this.fontSize*3 + "px Helvetica";
-        this.ctx.textBaseline = "middle";
-        this.ctx.textAlign = "center";
-        this.ctx.fillText("Press R to restart!", this.width / 2, this.height / 2);
-    }
-    // Pause message
-    else if(this.isPause) {
-        this.ctx.fillStyle = "#333";
-        this.ctx.font = this.fontSize*3 + "px Helvetica";
-        this.ctx.textBaseline = "middle";
-        this.ctx.textAlign = "center";
-        this.ctx.fillText("Press P to Start!", this.width / 2, this.height / 2);
-    }
 }
 
 // Draw rotate object
@@ -243,8 +233,13 @@ Game.prototype.start = function()
 // Pause or Unpause game
 Game.prototype.pause = function()
 {
-    if(this.isPause) this.isPause = false;
-    else this.isPause = true;
+    if(this.isPause) {
+        this.isPause = false;
+        this.description_box.classList.remove("active");
+    } else {
+        this.isPause = true;
+        this.description_box.classList.add("active");
+    } 
 }
 
 // Restart game
@@ -262,6 +257,9 @@ Game.prototype.restart = function()
     this.score = 0;
     this.isLose = false;
     this.isPause = false;
+
+    // hide description box
+    this.description_box.classList.remove("active");
 }
 
 // Game lose
@@ -269,6 +267,7 @@ Game.prototype.lose = function()
 {
     if(!this.isPause) this.pause();
     this.isLose = true;
+    this.description_box.classList.add("active");
 }
 
 // Show information

@@ -42,13 +42,65 @@ body {
 }
 
 #game-canvas {
-    border: 2px solid #0007;
+    border: 0.15em solid wheat;
 
     width: 80vw;
     height: 80vh;
     border-radius: 0.8em;
 }
 
-#game-canvas:hover {
-    border-color: #fff7;
+.description-box {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    flex-direction: column;
+    user-select: none;
+    cursor: pointer;
+    background: #fff9;
+    font-family: "VT323", monospace;
+
+    min-width: 50vw;
+    min-height: 50vh;
+    color: #555;
+    padding: 0.3em;
+    font-size: 1.8em;
+    border-radius: 0.3em;
+    border: 0.1em solid #555;
+    transition: 0.1s;
+}
+
+.description-box > div {
+    margin: 0.05em;
+    width: 9em;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.description-box > h1 {
+    margin: 0.1em;
+}
+
+.description-box:hover {
+    background: #fffb;
+}
+
+.active {
+    visibility: visible;
+}
+
+.key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 1em;
+    margin: 0.1em;
+    padding: 0.1em;
+    min-width: 1em;
+    border: 0.1em solid;
+    border-radius: 0.3em;
 }
