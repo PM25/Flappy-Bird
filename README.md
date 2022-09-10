@@ -1,9 +1,9 @@
 # Flappy Bird
 
-[link] [pm25.github.io/Flappy-Bird](https://pm25.github.io/Flappy-Bird)
+A website version of the popular mobile game Flappy Bird. Developed with Javascript without any additional libraries.
 
-This is my javascript version of flappy bird.
-Welcome to play and give me feedback, I will be very appreciated ;)
+### Link
+[pm25.github.io/Flappy-Bird](https://pm25.github.io/Flappy-Bird)
 
 ### preview
 
